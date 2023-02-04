@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\pgfplotsset{compat=1.16}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\title{Lección 1}
+\author{Mario Rodríguez}
+\date{Feb 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Escuaciones diferenciales ordinarias de primer orden}
+Definición: Llamamos ecuación diferencial de primer orden a una igualdad de la forma:
+\[F(y'(x), y(x), x) \equiv y'(x)=f(y(x), x)\]
+Resolverla es determinar las funciones $y(x)$ que la cumplan para todo $x\in I$.
+\subsection{Ejemplo: La descarga de un condensador}
+$q(t)$ es la carga en el instante t.\\
+$i(t)$ es la intensidad de corriente en el instante t.\\
+Sabiendo que $i(t) = q'(t)$ y que $Q\textsubscript{0}$
+\subsection{Resolucion de la ecuacion diferencial:}
+\[R\cdot i(t)+\frac{1}{C}\cdot q(t) = R\cdot q'(t)+\frac{1}{C}\cdot q(t) \equiv q'(t)+\frac{1}{R\cdot C}\cdot q(t) = 0 \]
+\\
+\[R\cdot q'(t)+\frac{1}{C}\cdot q(t) \equiv q'(t)+\frac{1}{R\cdot C}\cdot q(t) = 0 \]
+\\
+\[\frac{q'(t)}{q(t)}=-\frac{1}{R \cdot C} \rightarrow \int\frac{q'(t)}{q(t)} = \int-\frac{1}{R \cdot C} \]
+\\
+\[ \ln(|q(t)|)= \frac{-1}{R\cdot C}\cdot t + C\textsubscript{1}\]
+\\
+Tomando exponenciales y teniendo en cuanta que $e^{C\textsubscript{1}}=C>0$:
+\[q(t) = C \cdot e^{\frac{-1}{RC}\cdot t}\]
+Obtenemos asi una familia uniparamétrica de soluciones, o tambien conocida como solución general.
+Sin embargo sabemos que $Q\textsubscript{0}=q(0)=C$, obtenemos la solución particular:
+\[q(t)=Q\textsubscript{0}\cdot e^{\frac{-t}{C\cdot R}}\] 
+
+\section*{Problema de valor inicial}
+\subsection{Teorema de existencia y unicidad de soluciones}
+Suponemos:
+
+\begin{equation}
+    \begin{cases}
+        y'(x)=f(y(x),x) & x \in I \\
+        y(x\textsubscript{0})=y\textsubscript{0} & x \in I
+    \end{cases} 
+\end{equation}
+Si $f$ y $\frac{\partial f}{\partial y}$ son contínuos en R, entonces el problemade valor inicial tiene solución y es única.
+
+\subsection{Ecuaciones separables}
+\[y'=f(x) \cdot g(y) \rightarrow \frac{y'}{g(y)}=f(x) \rightarrow \int\frac{y'}{g(y)}\cdot dx = \int f(x) \cdot dx + C\]
+Nótese que: $\int\frac{dy}{g(y)}=\int\frac{y'}{g(y)(x)}$ sabiendo que $y = y(x)$ y $dy = y'(x)\cdot dx$.\\
+Volviendo a las condiciones iniciales:
+\begin{equation}
+    \begin{cases}
+        y'(x)=f(x)\cdot g(y) \\
+        \frac{dy}{dx}=f(x)\cdot g(y) \rightarrow \frac{dy}{g(y)}=f(x)\cdot dx
+    \end{cases} 
+\end{equation}
+Y la familia uniparamétrica de curvas queda tal que:
+\[\int\frac{dy}{g(y)}=\int f(x)\cdot dx + C\]
+
+\section{Ecuación lineal no homogénea: $y'+p(x)\cdot y=r(x)$}
+Llamaremos ecuacion homogénea asociada a la misma ecución solo que $r(x)=0$. A la ecuación\\
+no homogénea la llamaremos ecuación completa. Vamos a ver que la solución general de la ecuación\\
+completa es de la forma:
+\[y(x) = y\textsubscript{h}(x)+y\textsubscript{p}(x)\]
+Donde $y\textsubscript{h}(x)$ es la solución general de la ecuación homogenea asociada y $y\textsubscript{p}(x)$ es la solución particular \\
+de la ecuación completa.\\
+En efecto, sea $y(x)$ la solución cualquiera de la ecuación completa y sea $y\textsubscript{p}(x)$ una solución cualquiera fijada de dicha ecuación.
+Entonces $y(x)-y\textsubscript{p}(x)$ es solución de la ecuación homogénea asociada, pues:
+\[(y-y\textsubscript{p})'+p(x)\cdot (y-y\textsubscript{p})=y'-y\textsubscript{p}'+p(x)\cdot y-p(x)\cdot y\textsubscript{p}=(y'+p(x)\cdot y)-(y\textsubscript{p}'+p(x)\cdot y\textsubscript{p})=r(x)-r(x)\]
+Así pues, $y-y\textsubscript{p}=y\textsubscript{0}$ será solución de la ecuación homogénea asociada y por tanto:
+\[y=y\textsubscript{0}+y\textsubscript{p}\]
+\subsection{Cálculo de $y\textsubscript{p}$: método de variación de las constantes}
+\[y'+p(x)\cdot y=r(x)\]
+\[y'+p(x)\cdot y=0 \rightarrow y\textsubscript{h}=c\cdot e^{-\int p(x)\cdot dx}\]
+Ensayamos con $y\textsubscript{p}(x)=v(x)\cdot e^{-\int p(x)\cdot dx}$ y vamos a determinar $v(x)$
+\[y\textsubscript{p}'(x) = v'(x)\cdot e^{-\int p(x)\cdot dx}+v(x) \cdot e^{-\int p(x)\cdot dx} \cdot -p(x)\]
+Sustituyendo en la ecuación completa:
+\[ [v'(x)\cdot e^{-\int p(x)\cdot dx- v(x)\cdot p(x) \cdot e^{-\int p(x)\cdot dx}}]+p(x)\cdot v(x)\cdot e^{-\int p(x)\cdot dx}=r(x)\]
+\[v(x)\cdot e^{-\int p(x)\cdot dx}=r(x)\]
+\[v'=\frac{r(x)}{ e^{-\int p(x)\cdot dx}}=r(x)\cdot e^{\int p(x)\cdot dx}\]
+Y por tanto:
+\[v(x)=\int r(x)\cdot e^{\int p(x)\cdot dx}\]
+
+
+
+
+
+
+\end{document}
