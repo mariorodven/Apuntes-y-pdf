@@ -1,0 +1,31 @@
+\documentclass{article}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amsmath}
+\pgfplotsset{compat=1.16}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+
+\title{Lección 2: Ecuaciones lineales de segundo orden}
+\author{Mario Rodríguez}
+\date{Feb 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{Definicion}
+Llamamos ecuación diferencial de segundo orden a una igualdad de la forma:
+\[y''+p(x)\cdot y'+q(x)\cdot y =r(x)\]
+Además, $p(x), q(x) , r(x) \in I$ y son contínuas en $I$.\\
+Diremos que la ecuación es homogenea si la función $r(x) = 0$, quedando así la ecuación:
+\[y''+p(x)\cdot y'+q(x)\cdot y =0\]
+Adicionalmente, diremos que la ecuación es de coeficientes constantes si $p(x)\in \mathbb{R}$ y $q(x)\in \mathbb{R}$ queda tal que asi:
+\[y''+p\cdot y'+q\cdot y= r(x)\]
+\[y''+p\cdot y'+q\cdot y= 0\]
+
+\subsection[P.V.I]{Definicion de problemas de valores iniciales}
+
+\[y'' +p(x)\cdot y' + q(x)\cdot y = r(x) \; x\in I\] 
+
+\end{document}

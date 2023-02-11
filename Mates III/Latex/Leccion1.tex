@@ -1,12 +1,12 @@
 \documentclass{article}
-\usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \pgfplotsset{compat=1.16}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 
-\title{Lección 1}
+\title{Lección 1: Escuaciones diferenciales ordinarias de primer orden}
 \author{Mario Rodríguez}
 \date{Feb 2023}
 
@@ -14,8 +14,8 @@
 
 \maketitle
 
-\section{Escuaciones diferenciales ordinarias de primer orden}
-Definición: Llamamos ecuación diferencial de primer orden a una igualdad de la forma:
+\section{Definición}
+Llamamos ecuación diferencial de primer orden a una igualdad de la forma:
 \[F(y'(x), y(x), x) \equiv y'(x)=f(y(x), x)\]
 Resolverla es determinar las funciones $y(x)$ que la cumplan para todo $x\in I$.
 \subsection{Ejemplo: La descarga de un condensador}
@@ -47,7 +47,7 @@ Suponemos:
         y(x\textsubscript{0})=y\textsubscript{0} & x \in I
     \end{cases} 
 \end{equation}
-Si $f$ y $\frac{\partial f}{\partial y}$ son contínuos en R, entonces el problemade valor inicial tiene solución y es única.
+Si $f$ y $\frac{\partial f}{\partial y}$ son contínuos en R, entonces el problema de valor inicial tiene solución y es única.
 
 \subsection{Ecuaciones separables}
 \[y'=f(x) \cdot g(y) \rightarrow \frac{y'}{g(y)}=f(x) \rightarrow \int\frac{y'}{g(y)}\cdot dx = \int f(x) \cdot dx + C\]
@@ -85,11 +85,8 @@ Sustituyendo en la ecuación completa:
 \[v'=\frac{r(x)}{ e^{-\int p(x)\cdot dx}}=r(x)\cdot e^{\int p(x)\cdot dx}\]
 Y por tanto:
 \[v(x)=\int r(x)\cdot e^{\int p(x)\cdot dx}\]
-Es el resultado final de $v(x)$
+Es el resultado final de $y(x)$ queda tal que asi:
 
-
-
-
-
+\[ y(x) = y\textsubscript{p} + y\textsubscript{h} = c\cdot e^{-\int p(x)\cdot dx}+[\int r(x)\cdot e^{\int p(x)\cdot dx}]\cdot e^{\int p(x)\cdot dx}\]
 
 \end{document}
