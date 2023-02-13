@@ -24,6 +24,31 @@ Experimento aleatorio $\equiv$ {resultados posibles} = $\Omega$: Espacio muestra
 \\
 \\Decimos que $\Omega$ es discreto si es finito o numerable infinito. A cada subconjunto de $\Omega$ se le llamará suceso simple si es un único elemento o compuesto si tiene mas de un elemento. Dentro de los sucesos tenemos a $\Omega$, que representa el suceso seguro y a $\emptyset$ que representa el suceso imposible.
 \\
+Llamamos espacio muestral a los sucesos de $\Omega$ al conjunto $E=P(\Omega) \equiv $ todos los sucesos que se pueden formar con elementos de $\Omega$
 
+\subsection*{Operaciones de sucesos: $\cup ,\cap, \overline{A\cup B},-, \Delta $}
+Tenemos por un lado la unión representado por $A\cup B$, que representa la posibilidad de el elemento de la izquierda ademas de la probabilidad de el de la derecha. 
+Por otro lado tenemos la intersección, representado por $A\cap B$, que represetna la posibilidad de algo que ocurre tanto en A como en B. 
+Además negado de $A$ se representa con $\overline{A}$, que se calcula con $1-A$ y es la probabilidad de que no ocurra $A$.
+Esto último da a las leyes de Morgan, que mas que explicarlas es mas facil visualizarlas:
+\[\overline{A \cup B}=\overline{A} \cap \overline{B}\]
+\[\overline{A \cap B}=\overline{A} \cup \overline{B}\]
+
+También está $-$, que para explicarlo vamos a suponer el suceso $A$ que es la probabilidad de sacar par en un dado de 6 caras: $A=\{2,4,6\}$ y el suceso $B$, que sera sacar un múltiplo de 3 en un dado de 6 caras también: $B=\{3,6\}$. 
+\[A-B=\{2,4,6\}-\{3,6\}=\{2,4\}\]
+De la misma forma:
+\[B-A=\{3\}\]
+Y por último, $\Delta$ se define como:
+\[A \Delta B = A-B \cup B-A=\{2,3,4\}\]
+
+\subsection{Asignación de probabilidades}
+\subsubsection*{Laplaciana: Suponemos equiprobabilidad}
+\[\forall w \in \Omega \rightarrow P(\{w\})=\frac{1}{\Omega} = \frac{1}{n} \]
+\[\forall A \subseteq \Omega \rightarrow P(A) = \frac{|A|}{|\Omega|} = \frac{k}{N}\leq 1\]
+
+\subsubsection*{Combinatoria básica}
+
+¿Cuántos grupos diferentes de n puedo formar teniendo m para elegir?, donde m es el nº de elementos para elegir y n el nº de elementos que elegimos, formando asi:
+\[C\textsubscript{m,n}=\begin{pmatrix}m \\ n\end{pmatrix} = \frac{m\cdot (m-1) \ldots (m-n+1)}{n\cdot (n-1) \ldots 2 \cdot 1} \cdot \frac{(m-n)!}{(m-n)!}=\frac{m!}{n!\cdot (m-n)!}=\begin{pmatrix}m\\m-n\end{pmatrix}\]
 
 \end{document}
